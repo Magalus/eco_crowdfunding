@@ -1,5 +1,5 @@
 <template>
-    <h1>PAGE D'ACCUEIL</h1>
+    <h1> Bienvenu sur la première platform de crowfunding écologique</h1>
 </template>
 
 <style lang="scss" scoped>

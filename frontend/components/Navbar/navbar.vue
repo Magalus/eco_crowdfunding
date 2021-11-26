@@ -5,14 +5,33 @@
                 <nuxt-link to="/">Accueil</nuxt-link>
                 <nuxt-link to="/projects">Découvrez les projets</nuxt-link>
                 <nuxt-link to="/createProject">Nouveau projet</nuxt-link>
+                <nuxt-link to="/admin">Admin</nuxt-link>
             </div>
-            <div>
+            <div v-if="!loggedIn">
                 <nuxt-link to="/login">Se connecter</nuxt-link>
                 <nuxt-link to="/register">S'enregistrer</nuxt-link>
+            </div>
+            <div v-else>
+                <span> Hello {{user.name}} !</span>
+                <a @click.prevent="logout">Logout</a>
             </div>
         </div>
     </nav>
 </template>
+
+
+<script>
+
+    export default {
+        methods: {
+            logout() {
+                this.$auth.logout()
+            }
+        }
+    }
+
+</script>
+
 
 <style lang="scss" scoped>
 
@@ -47,7 +66,7 @@ nav {
             &:last-child {
                 justify-content: flex-end;
 
-                a {
+                a, span {
                     margin-right: 20px;
 
                     &:last-child {
@@ -58,13 +77,18 @@ nav {
         }
 
         a {
-            color: white;
-            text-decoration: none;
-            font-size: 17px;
+            color: white !important;
+            text-decoration: none !important;
+            font-size: 17px !important;
 
             &:hover {
-                text-decoration: underline;
+                text-decoration: underline !important;
+                cursor: pointer;
             }
+        }
+
+        span {
+            font-size: 17px;
         }
     }
 }

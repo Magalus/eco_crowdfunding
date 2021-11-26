@@ -16,10 +16,10 @@
             <label>Objectif</label>
             <input type="number" class="form-control" value="1000">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Ajouter une image</label><br>
             <input type="file" class="form-control-file">
-        </div>
+        </div> -->
         <button type="submit" class="btn">Créer le projet</button>
     </form>
 </template>
@@ -47,7 +47,7 @@ form {
         margin-bottom: 15px;
 
 
-        &:nth-child(5) {
+        &:nth-child(4) {
             margin-bottom: 30px;
         }
     }
